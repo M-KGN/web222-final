@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<author Max Kogan></author>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Project Website</title>
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+<style>
+    
+    .blue-section {
+        background-color: rgb(35, 166, 226);
+        color: white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .white-section {
+        background-color: white;
+        color: black;
+        padding: 20px;
+    }
+    .blue-section img {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+    }
+    .blue-section button {
+        background-color: white;
+        color:  rgb(35, 166, 226);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    .about-me {
+        margin-top: 20px;
+    }
+    .about-me h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .about-me p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .education {
+        background-color:  rgb(35, 166, 226);
+        color: white;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .education h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .education .box {
+        background-color: white;
+        color: rgb(35, 166, 226);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: calc(100% - 40px); 
+        display: block; 
+    }
+    .education .box + .box {
+        margin-top: 10px; 
+    }
+</style>
+</head>
+<body>
+
+
+<section class="blue-section">
+    <img src="https://media.discordapp.net/attachments/803761268917796917/1230263141154422885/image.png?ex=6632aed6&is=662039d6&hm=6b3839f858367acac8d845906fe8d90e4d30a85e69b0b61e736d9cf039e7bab1&=&format=webp&quality=lossless&width=418&height=525" alt="Example Image">
+    <div>
+        <h2>Max Kogan</h2>
+        <p>Web Developer</p>
+        <button onclick="window.location.href = 'resume.pdf'" class="download-link">My Resume</button> <br>
+        <button onclick="scrollToContact()" class="contact-link">Contact Me</button>
+    </div>
+</section>
+
+
+<section class="white-section">
+    <h2>About Me</h2> 
+   <p>Hi, im Max Kogan. this is my first website. i have included my resume and a contact page. i am currently
+    entrolled in the seneca CPP program because i enjoy working with computers and find the way they work really
+    fascinating. i really enjoy web development because it allows me to code while also being able to show my creativity
+    and express myself a little bit. this website isnt too good because i am still learning but when i learn how to better
+    work with html, js, and css i would like to make some really nice and visually appealing websites that many people 
+    would enjoy and be able to use comfortably. my interests include listening to music, gaming, swimming, biking,
+    going for walks, and driving. <br>
+    I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy.
+    No part of this assessment has been copied manually or electronically from any other source
+    (including web sites) except for the information supplied by the WEB222 instructors and / 
+    or made available in this assessment for my use. I also declare that no part of this assignment
+    has been distributed to other students.</p>
+   
+     <h2>Basic Information</h2>
+     <p>Name: Max Kogan</p>
+     <p>Age: 18</p>
+     <p>Location: Newmarket, ON</p>
+     <p>Email: mkogan4@myseneca.ca</p>
+     <p>Student ID: 116798232</p>
+     <p>Section: NEE</p>
+     <p>Professor: Mark Meritt</p>
+     
+    
+      
+   
+</section>
+
+<!-- Education Section -->
+<section class="blue-section education">
+    <h2>Education</h2>
+    <div class="box">
+        <p>Ontario Secondary School Diploma (OSSD) 2019 - 2023 <br>
+        Sir William Mulock Secondary School</p>
+    </div>
+    <div class="box">
+        <p>Ontario College Diploma (OCD) 2023-2025 (expected) <br>
+          Seneca College - Computer Science (CPP)</p>
+    </div>
+</section>
+
+<!-- Contact Me Section -->
+<section id="contact-form">
+  <h2>Contact Me</h2>
+  <form action="https://httpbin.org/post" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="city">City:</label>
+      <select id="city" name="city" required>
+          <option value="Toronto">Toronto</option>
+          <option value="Montreal">Montreal</option>
+          <option value="Vancouver">Vancouver</option>
+          <option value="Calgary">Calgary</option>
+          <option value="Edmonton">Edmonton</option>
+          <option value="Ottawa">Ottawa</option>
+          <option value="Quebec City">Quebec City</option>
+          <option value="Winnipeg">Winnipeg</option>
+          <option value="Hamilton">Hamilton</option>
+          <option value="London">London</option>
+         
+      </select>
+
+      <label for="postal-code">Postal Code:</label>
+      <input type="text" id="postal-code" name="postal-code" pattern="[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d|\d{5}(-\d{4})?" required>
+      <small>Format: A1A 1A1 or A1A1A1</small>
+
+      <fieldset>
+          <legend>Reason for Contact:</legend>
+          <input type="radio" id="question" name="reason" value="question" required>
+          <label for="question">Question</label>
+          <input type="radio" id="comment" name="reason" value="comment" required>
+          <label for="comment">Comment</label>
+          <input type="radio" id="hiring" name="reason" value="hiring" required>
+          <label for="hiring">Hiring</label>
+      </fieldset>
+
+      <div class="hourly-rate" style="display: none;">
+          <label for="hourly-rate">Hourly Rate:</label>
+          <input type="number" id="hourly-rate" name="hourly-rate">
+      </div>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      
+      <label for="additional-info">Additional Information:</label>
+      <input type="text" id="additional-info" name="additional-info">
+
+      <button type="submit">Submit</button>
+
+      <button onclick="window.location.href = 'index.html'" class="custom-button">Go Back</button>
+  </form>
+</section>
+
+<script>
+  function scrollToContact() {
+      document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const hiringRadio = document.getElementById('hiring');
+      const hourlyRate = document.querySelector('.hourly-rate');
+
+      hourlyRate.style.display = 'none';
+
+      const radioButtons = document.querySelectorAll('input[type="radio"][name="reason"]');
+      radioButtons.forEach(function(radioButton) {
+          radioButton.addEventListener('change', function() {
+              if (hiringRadio.checked) {
+                  hourlyRate.style.display = 'block';
+              } else {
+                  hourlyRate.style.display = 'none';
+              }
+          });
+      });
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
